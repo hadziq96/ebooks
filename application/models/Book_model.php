@@ -61,4 +61,28 @@ class Book_model extends CI_Model{
 		$this->db->delete('book',['id'=>$id]);
 		$this->db->delete('part',['id_book'=>$id]);
 	}
+	
+	// advance function
+	// pagination
+	public function pagination($limit,$i){
+		$this->db->order_by('id');
+		$this->db->limit($limit,$i);
+		$query=$this->db->get("book");
+		return $query->result_array();
+	}
+	
+	// searh function
+	// get book searched
+	public function get_book_searched($search){
+		$this->db->like('title',$search);
+		$query=$this->db->get('book');
+		return $query->result_array();
+	}
+	public function search($limit,$i, $search){
+		$this->db->order_by('id');
+		$this->db->like('title',$search);
+		$this->db->limit($limit,$i);
+		$query=$this->db->get("book");
+		return $query->result_array();
+	}
 }

@@ -1,20 +1,42 @@
 <!-- start content -->
 <div class="container">
-	<div class="row">
-	<?php foreach($book as $a_book){?>
-	<div class="col-md-6">
-	<div class="card mt-4 border-right-0">
-		<div class="card-header bg-custom text-white border-bottom-0">
-			<b><?=$a_book['title'];?></b>
+	<div class="row d-flex justify-content-center">
+		<div class="input-group col-md-6">
+			<input type="text" class="form-control bg-light search-input" placeholder="Search book..">
+			<div class="input-group-append">
+				<button class="btn btn-primary search-button" type="button">
+					<i class="fa fa-search"></i>
+				</button>
+			</div>
 		</div>
-		<div class="card-body">
-			<?=$a_book['description'];?>
-		</div>
-		<div class="card-footer bg-light">
-			<a href="<?=base_url('book/'.$a_book['id']);?>">See more</a>
-		</div>
-	</div>
-	</div>
-	<?}?>
 	</div>
 </div>
+              
+              
+<div class="list-book">
+</div>
+<script src="<?=base_url('asset/js/jquery.js');?>"></script>
+<script>
+	$(document).ready(function(){
+	function ajax(page){
+		$.ajax({
+			type:'POST',
+			data:{page:page},
+			url:"<?=base_url('page/pagination');?>",
+			success:function(result){
+					$(".list-book").html(result);
+			
+					// click button
+					$(".ajax_pagination").on("click",function(){
+						ajax($(this).attr('id'));
+						// base_url variable from guest controller. see controller to see detail
+						window.history.pushState(null,null,"/<?=$base_url;?>/book/page/"+$(this).attr('id'));
+					});
+				}
+		});
+	}
+	// load book first time
+	ajax("<?=$page;?>");
+	
+	});
+</script>
