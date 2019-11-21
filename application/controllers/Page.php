@@ -31,8 +31,27 @@ class  Page extends CI_Controller {
 	
 	// search book guest
 	public function search(){
-		echo"halooo"; die();
-		$this->load->view("guest/search",$data);
+		$post=$this->input->post();
+		// pagination
+		$number_page=$post['page'];
+		// form search input
+		$search=$post['search'];
+		// i for index
+		$limit=5; // 5 book/page
+		$i=$number_page*$limit-$limit;
+		// if number_page is not available, redirect to not found page
+		$total_book=count($this->book_model->get_book_searched($search));
+		$total_page=ceil($total_book/$limit);
+		if($number_page>$total_page){
+			redirect("book/not_found");
+		}
+		// pagination
+		$data=[
+				"page_number"=>$number_page,
+				"total_page"=>$total_page
+				];
+		$data["book"]=$this->book_model->search($limit,$i,$search);
+		$this->load->view("guest/book_list",$data);
 	}
 	public function not_found(){
 		echo "not found";

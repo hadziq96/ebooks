@@ -26,24 +26,24 @@
 		<?php
 			if($total_page>=5){
 				if($page_number<=2){
-					$xy=1;
-					$xyz=$page_number+3;
+					$start=1;
+					$end=$page_number+3;
 				}elseif($page_number>=$total_page-1){
-					$xy=$page_number-3;
-					$xyz=$total_page;
+					$start=$page_number-3;
+					$end=$total_page;
 				}else{
-					$xy=$page_number-2;
-					$xyz=$total_page;
+					$start=$page_number-2;
+					$end=$total_page;
 				}
 			}else{
-				$xy=1;
-				$xyz=$total_page;
+				$start=1;
+				$end=$total_page;
 			}
-			 for($y=$xy; $y<=$xyz; $y++){
-				if($y==$page_number){?>
-					<li class="page-item active"><button style="color:blue;" class="text-white page-link ajax_pagination" id="<?=$y;?>"><?= $y;?></button></li>
+			 for($number_link=$start; $number_link<=$end; $number_link++){
+				if($number_link==$page_number){?>
+					<li class="page-item active"><button style="color:blue;" class="text-white page-link ajax_pagination" id="<?=$number_link;?>"><?= $number_link;?></button></li>
 				<?}else{?>
-					<li class="page-item"><button class="page-link ajax_pagination" id="<?=$y;?>"><?= $y;?></button></li>
+					<li class="page-item"><button class="page-link ajax_pagination" id="<?=$number_link;?>"><?= $number_link;?></button></li>
 				<?}
 			}?>
 
