@@ -4,7 +4,7 @@ $(document).ready(function(){
 		if($('.search-input').val().length>0){
 			window.location.href=$('.base_url').attr('id')+"book/search/"+$('.search-input').val();
 		}else{
-			alert("hmmm");
+			alert("search input cannot be empety");
 		}
 	});
 });

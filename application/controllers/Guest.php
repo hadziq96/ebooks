@@ -35,13 +35,28 @@ class  Guest extends CI_Controller {
 		// $data['book']=$this->book_model->get_book();
 		$this->load->g_template("index",$data);
 	}
+	
+	// display one book with all its parts
 	public function book($id){
 		$data['book']=$this->book_model->get_book_by_id($id);
 		$data['part']=$this->part_model->get_part($id);
+		if($data['book']==null){
+			redirect("not_found");
+		}
 		$this->load->g_template("display_book",$data);
 	}
+	
+	// display one part or aticle
 	public function part($id){
 		$data['part']=$this->part_model->get_part_by_id($id);
+		if($data['part']==null){
+			redirect('not_found');
+		}
 		$this->load->g_template("display_part",$data);
+	}
+	
+	// page not found
+	public function not_found(){
+		$this->load->g_template('not_found');
 	}
 }

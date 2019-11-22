@@ -50,7 +50,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'guest';
-$route['404_override'] = 'page/not_found';
+$route['404_override'] = 'guest/not_found';
+$route['not_found']='guest/not_found';
 $route['translate_uri_dashes'] = FALSE;
 // admin page
 // for book
@@ -75,8 +76,7 @@ $route['book/search']='guest/search';
 $route['book/search/([A-Za-z]+)']='guest/search/$1';
 $route['book/search/([A-Za-z]+)/(:num)']='guest/search/$1/$2';
 
-// not found
-$route['book/not_found']='page/not_found';
-
+// display specific book
 $route['book/(:any)']='guest/book/$1';
+// display specific article/part
 $route['part/(:any)']='guest/part/$1';
