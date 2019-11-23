@@ -21,7 +21,7 @@
 <!-- end of add button -->
 
 <!-- table of book -->
-	<div style="overflow-x:auto;">
+	<div class="list-scrollable">
 		<table class="table table-bordered">
    			<thead>
       			<tr>

@@ -3,6 +3,15 @@
 	font-family:droid-sans;
 	src:url(../font/DroidSans.ttf);
 }
+
+/* style of content */
+.list-scrollable{
+	max-height:500px;
+	overflow-x:auto;
+	overflow-y:scroll;
+}
+
+
 /* style of footer */
 .footer-social{
 	padding-bottom:10px;

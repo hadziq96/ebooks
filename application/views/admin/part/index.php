@@ -21,7 +21,7 @@
 <!-- end of button -->
 
 <!-- table of part -->
-	<div style="overflow-x:auto;">
+	<div class="list-scrollable">
 		<table class="table table-bordered">
     		<thead>
       			<tr>
