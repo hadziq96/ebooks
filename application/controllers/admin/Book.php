@@ -5,6 +5,11 @@ class Book extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("book_model");
+		// redirect if user didnt login
+		$user=$this->session->userdata('user');
+		if($user==null){
+			redirect('login');
+		}
 	}
 	// display all book
 	public function index(){

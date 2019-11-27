@@ -33,4 +33,16 @@ INSERT INTO `part` (`id`, `id_book`, `title`, `article`) VALUES
 ('part-00001',	'book-00001',	'Pemasangan',	'<p>Pertama-tama anda harus menginstall aplikasi ini terlebih dahulu. Namun jika kamu sudah melihat tulisan ini kemungkinan besar kamu telah berhasil menginstal aplikasi ini. Selamat, anda bisa ke step selanjutnya</p>'),
 ('part-00006',	'book-00001',	'Terimakasih',	'<p>Terimakasih telah menggunakan aplikasi ini. Tentu masih banyak kekurangan fitur dan eror yang mungkin masih sering muncul. Bila ada saran untuk fitur kedepannya atau kamu menemukan eror dalam aplikasi ini, kamu bisa menghubungi kami melalui kontak di bawah atau langsung email ke:</p> <b>hadziqay@gmail.com</b>');
 
--- 2019-11-07 07:52:24
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `level` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `user` (`id`, `name`, `username`, `password`, `level`) VALUES
+('user-001',	'Super admin',	'admin',	'$2y$10$JR3wisiVE5/qdNLaGRevf.jz11g6OqQQEEaQqRKyyUA1Zy3dU3NjC',	1);
+
+-- 2019-11-27 11:54:18

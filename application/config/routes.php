@@ -80,3 +80,5 @@ $route['book/search/([A-Za-z]+)/(:num)']='guest/search/$1/$2';
 $route['book/(:any)']='guest/book/$1';
 // display specific article/part
 $route['part/(:any)']='guest/part/$1';
+// logout menu
+$route['logout']='login/logout';

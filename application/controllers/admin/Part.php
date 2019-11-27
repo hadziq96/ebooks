@@ -5,6 +5,11 @@ class Part extends CI_Controller {
 	public function __construct(){
 		parent::__construct();
 		$this->load->model("part_model");
+		// redirect if user didnt login
+		$user=$this->session->userdata('user');
+		if($user==null){
+			redirect('login');
+		}
 	}
 	// display part of book
 	public function index($id_book){
