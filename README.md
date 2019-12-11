@@ -6,4 +6,4 @@ Ebooks is just another web blog, Where you can add article and manage it. You ca
 
 Just install like another app was builded with codeigniter 3.
 - first you can edit config config.php base_url and database settings in config/database
-- Then import database ebooks sql
+- Then import database ebooks sql / You can run migration function with url yourBaseUrl/migrate (updated 11 desember 2019)
