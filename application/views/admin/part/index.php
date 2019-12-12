@@ -9,7 +9,7 @@
 				<span aria-hidden="true">&times;</span>
 			</button>
 		</div>
-	<?}?>
+	<?php }?>
 <!-- end of message -->
 
 <!-- add part button -->
@@ -49,7 +49,7 @@
         				<button class="delete border-0 text-primary" data-toggle="modal" data-target="#exampleModal" id="<?=base_url('admin/part/confirm/'.$a_part['id']);?>"><i class="fa fa-trash"></i></button>
         			</td>
        			</tr>
-       		<?}?>
+       		<?php }?>
      		</tbody>
  		</table>
  	</div>

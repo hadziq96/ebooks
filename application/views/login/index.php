@@ -1,8 +1,7 @@
 <div class="container">
 	<!-- Message for action(edit and add)-->
-	<?php
-		$flashdata=$this->session->flashdata();
-		if($flashdata!=null){?>
+		<?php $flashdata=$this->session->flashdata();?>
+		<?php if($flashdata!=null){?>
 		
 		<div class="alert <?=$flashdata['color'];?> alert-dismissible fade show" role="alert">
 			<?=$flashdata['message'];?>
@@ -10,7 +9,7 @@
 				<span aria-hidden="true">&times;</span>
 			</button>
 		</div>
-	<?}?>
+		<?php }?>
 	<!-- end of message -->
 	<!-- start form -->
 	<form method="post" action="<?=base_url('login/auth');?>">

@@ -1,15 +1,14 @@
 <div class="container">
 <!-- Message for action(edit and add)-->
-	<?php
-	$flashdata=$this->session->flashdata();
-	if($flashdata!=null){?>
+	<?php $flashdata=$this->session->flashdata();?>
+	<?php if($flashdata!=null){?>
 		<div class="alert <?=$flashdata['color'];?> alert-dismissible fade show" role="alert">
 			<?=$flashdata['message'];?>
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 				<span aria-hidden="true">&times;</span>
 			</button>
 		</div>
-	<?}?>
+	<?php }?>
 <!-- end of message -->
 
 <!-- add book button -->
@@ -55,7 +54,7 @@
         				<button class="delete border-0 text-primary" data-toggle="modal" data-target="#exampleModal" id="<?=base_url('admin/book/confirm/'.$a_book['id']);?>"><i class="fa fa-trash"></i></button>
         			</td>
        			</tr>
-       		<?}?>
+       		<?php }?>
      		</tbody>
  		</table>
  	</div>
