@@ -17,8 +17,8 @@
 
 <!--load script-->
 <script src="<?=base_url('asset/js/jquery.js');?>"></script>
-<script src="<?=base_url('asset/js/'.$script);?>"></script>
 <script src="<?=base_url('asset/js/guest.js');?>"></script>
 <script src="<?=base_url('asset/js/bootstrap.js');?>"></script>
+<script src="<?=base_url('asset/js/'.$script);?>"></script>
 </body>
 </html>
