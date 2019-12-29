@@ -7,7 +7,7 @@
 			<!-- social media -->
 			<div class="footer-social d-flex justify-content-center col-sm-12 col-md-3">
 				<a target="_blank" rel="noopener noreferrer" href="https://facebook.com/hadziq.yaqin"><i class="fa fa-facebook"></i></a>
-				<a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=6285851470051"><i class="fa fa-whatsapp"></i></a>
+				<a target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=6285235729954"><i class="fa fa-whatsapp"></i></a>
 				<a target="_blank" href="http://github.com/hadziq96"><i class="fa fa-github"></i></a>
 			</div>
 			<!-- end of social media-->
